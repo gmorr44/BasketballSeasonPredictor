@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="backgroundContainer">
+        <div class="container">
+            <div class="header">
+                <h1>UNW Eagles</h1><h2>Tournament Projection Dashboard</h2>
+            </div>
+            
+            <div class="graph1">
+                <img class="importance" src="static\Importance.png" alt="Importance Graph">
+            </div>
+
+            <div class="graph2">
+                <img class="distribution" src="static\distribution.png" alt="Distribution Graph">
+            </div>
+
+            <div class="graph3">
+                <img class="playoff" src="static\pie.png" alt="Playoff Graph">
+            </div>
+
+            <div class="results">
+                {%block results%}
+                {%endblock%} 
+            </div>   
+            
+            
+            <form class="inputContainer" action="/submit" method="POST">   
+                <div class="offenseInput">
+                    <h2>Offensive Stats</h2>
+                        
+                            <label for="offTurnover">Turnover Allowed %</label><br>
+
+                            <input name="offTurnover"class = "num" type="number" min="0" max="100"step="0.1" value="0.0" ><br>
+
+                            <label for="offRebound">Offensive Rebound %</label><br>
+
+                            <input name="offRebound" class = "num" type="number" min="0" max="100"step="0.1" value="0.0"><br>
+
+                            <label for="offFreeThrow">Free Throw %</label><br>
+
+                            <input name="offFreeThrow" class = "num" type="number" min="0" max="100"step="0.1" value="0.0"><br>
+
+                            <label for="off2Point">2-Point Made %</label><br>
+
+                            <input name="off2Point" class = "num" type="number" min="0" max="100"step="0.1" value="0.0"><br>
+
+                            <label for="off3Point">3-Point Made %</label><br>
+
+                            <input name="off3Point" class = "num" type="number" min="0" max="100"step="0.1" value="0.0"><br>
+
+                            <label for="gameTempo">Game Tempo</label><br>
+                            <span>(Posessions Per 40 Minutes)</span><br>
+
+                            <input name="gameTempo" class = "num" type="number" min="0" max="200"step="0.1" value="0.0"><br>
+                            
+                            
+                        
+                </div> 
+                
+                <div class="defenseInput">
+                    <h2>Defensive Stats</h2>
+                        
+                            <label for="defTurnover">Turnover Committed %</label><br>
+
+                            <input name="defTurnover" class = "num" type="number" min="0" max="100"step="0.1" value="0.0"><br>
+
+                            <label for="defRebound">Rebound Allowed %</label><br>
+
+                            <input name="defRebound" class = "num" type="number" min="0" max="100"step="0.1" value="0.0"><br>
+
+                            <label for="defFreeThrow">Free Throw Allowed %</label><br>
+
+                            <input name="defFreeThrow" class = "num" type="number" min="0" max="100"step="0.1" value="0.0"><br>
+
+                            <label for="def2Point">2-Point Allowed %</label><br>
+
+                            <input name="def2Point" class = "num" type="number" min="0" max="100"step="0.1" value="0.0"><br>
+
+                            <label for="def3Point">3-Point Allowed %</label><br>
+
+                            <input name="def3Point" class = "num" type="number" min="0" max="100"step="0.1" value="0.0">      
+                </div>  
+                <div class="runModel">
+                    <input type="submit" class = "runButton" value="Run Season Projection"> 
+                </div> 
+            </form>  
+        </div>       
+    </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: grey;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+}
+.backgroundContainer{
+    position: absolute;
+    min-height: 100%;
+    height: auto;
+    min-width: 100%;
+    background-image: url("basketball.jpg");
+    background-size: cover;
+    background-position: center;
+    padding:0px;
+    margin:0px;
+    display: flex;  
+    justify-content: center; 
+    align-content: center; 
+}
+.container{
+    padding:0px;
+    margin: 0em 1em 1em 1em;
+    max-width: 1600px;
+    color:red;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: .5fr 1fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "input results graph1"
+    "input graph2 graph3"
+    ;
+    grid-gap: 1em;
+    align-self: center;
+}
+h1{
+    font-size: 40px;
+}
+.header{
+    border-radius: .5em;
+    color: rgb(109, 129, 185);
+    text-align: center;
+    position: relative;
+    background-color: rgba(58, 58, 58);
+    width: 45%;
+    height:auto;
+    grid-area: header;
+    margin:auto;
+}
+.header h1, .header h2{
+    margin: 0px;
+    padding: 5px;
+    color: #ddd;
+}
+.inputContainer{
+    color: white;
+    padding: .25em;
+    border-radius: .5em;
+    background: rgba(58, 58, 58, .9);
+} 
+.graph1 , .graph2, .graph3, .results{
+    max-height: 300px;
+    border-radius: .5em;
+    background: rgba(253, 253, 253);
+} 
+
+.graph1{
+    margin:0px;
+    padding: 0px;
+    grid-area: graph1;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+} 
+.importance{
+    padding: 0px;
+    margin: 0px;
+}
+.graph2{
+    margin:0px;
+    padding: 0px;
+    grid-area: graph2;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+}
+.distribution{
+    padding: 0px;
+    margin: 0px;
+}
+.graph3{
+    margin:0px;
+    padding: 0px;
+    grid-area: graph3;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.playoff{
+    padding: 0px;
+    margin: 0px;  
+}
+.results{
+    padding: .25em;
+    text-align: center;
+    grid-area: results; 
+}
+.val{
+    color: rgb(77, 146, 77);
+    margin-left: .5em;
+}
+.inputContainer h2{
+    color:rgb(0, 141, 235);
+} 
+.inputContainer{
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    grid-area: input;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr 1fr;
+    grid-template-areas: 
+    "offstats defstats"
+    "runmodel runmodel"
+    ;
+}
+.offenseInput{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    grid-area: offstats;
+}
+.defenseInput{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    grid-area: defstats; 
+}
+.num{
+    text-align: center;
+    font-size:large;
+    margin: .5em;
+    background-color:#ddd;
+    font-weight: bolder;
+    color:rgb(146, 15, 15);
+}
+.runModel{
+    height: 100%;
+    grid-area: runmodel;
+    text-align: center;  
+}
+.runButton{ 
+  margin-top: 20px;
+  background-color: rgb(0, 141, 235); 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+:hover.runButton{
+    background-color:rgb(91, 178, 236);
+}
+
+/* Cell phone and tablet viewing */
+
+@media only screen and (max-width: 1000px) {
+
+    .header{
+        width: 100%;
+    }
+
+    .container{
+        margin-left: .5em;
+        margin-right: .5em;
+        max-height:100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header"
+        "input input" 
+        "input input" 
+        "results results" 
+        "graph1 graph1"
+        "graph2 graph2" 
+        "graph3 graph3"
+        ;
+    }
+    .importance{
+        width: 100%;
+    }
+    .distribution{
+        width: 100%;
+    }
+    .playoff{
+        width: 100%;
+    }
+    
+  }
+
+
